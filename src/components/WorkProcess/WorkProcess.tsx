@@ -11,12 +11,6 @@ export function WorkProcess() {
         order={2}
         style={{
           fontSize: '50px',
-          '@media (min-width: 768px)': {
-            fontSize: '28px',
-          },
-          '@media (min-width: 1024px)': {
-            fontSize: '32px',
-          },
         }}
         ta="left"
         mb="sm"
@@ -28,14 +22,6 @@ export function WorkProcess() {
           style={{
             fontSize: '40px',
             lineHeight: '35px',
-            '@media (min-width: 768px)': {
-              fontSize: '20px',
-              lineHeight: '30px',
-            },
-            '@media (min-width: 1024px)': {
-              fontSize: '30px',
-              lineHeight: '30px',
-            },
           }}
           mb="xl"
         >

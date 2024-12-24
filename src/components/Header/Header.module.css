@@ -1,15 +1,43 @@
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable rule-empty-line-before */
+/* Contenedor del slider */
 /* Contenedor del slider */
 .sliderContainer {
   position: relative;
   width: 100%;
   max-width: 100%;
   height: auto;
+  overflow: hidden; /* Evita que partes de la imagen salgan del contenedor */
 }
 
 .sliderImage {
-  width: 100%;
+  width: 110%; /* Más grande para permitir movimiento */
   height: auto;
   display: block;
+  animation: distortMovement 8s infinite alternate ease-in-out;
+  filter: brightness(0.9) saturate(1.2);
+  transform-origin: center;
+}
+
+/* Animación de movimiento y distorsión */
+@keyframes distortMovement {
+  0% {
+    transform: scale(1) translateX(0) skew(0deg, 0deg);
+    filter: brightness(0.8) saturate(1.1);
+  }
+  25% {
+    transform: scale(1.05) translateX(-10px) skew(-2deg, 1deg);
+    filter: brightness(1) saturate(1.3);
+  }
+  50% {
+    transform: scale(1.1) translateX(0) skew(1deg, -1deg);
+  }
+  75% {
+    transform: scale(1.05) translateX(10px) skew(0deg, 2deg);
+  }
+  100% {
+    transform: scale(1) translateX(0) skew(0deg, 0deg);
+  }
 }
 
 /* Barra superior con logotipos */
@@ -22,36 +50,9 @@
 }
 
 .logoTop {
-  width: 150px; /* Ajusta según sea necesario */
+  width: 150px;
 }
 
 .logoBuho {
-  width: 40px; /* Ajusta según sea necesario */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .topBar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logoTop {
-    width: 120px;
-    margin-bottom: 8px;
-  }
-
-  .logoBuho {
-    width: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logoTop {
-    width: 100px;
-  }
-
-  .logoBuho {
-    width: 25px;
-  }
+  width: 40px;
 }

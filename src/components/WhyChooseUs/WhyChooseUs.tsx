@@ -10,12 +10,6 @@ export function WhyChooseUs() {
         order={1}
         style={{
           fontSize: '50px',
-          '@media (min-width: 768px)': {
-            fontSize: '40px',
-          },
-          '@media (min-width: 1024px)': {
-            fontSize: '50px',
-          },
         }}
         ta="left"
         mb="md"
@@ -30,14 +24,6 @@ export function WhyChooseUs() {
             style={{
               fontSize: '21px',
               lineHeight: '20px',
-              '@media (min-width: 768px)': {
-                fontSize: '18px',
-                lineHeight: '22px',
-              },
-              '@media (min-width: 1024px)': {
-                fontSize: '20px',
-                lineHeight: '24px',
-              },
             }}
             c="dimmed"
             mb="xl"
@@ -77,7 +63,7 @@ export function WhyChooseUs() {
                 backgroundColor: '#333',
                 color: 'white',
                 textAlign: 'left',
-                height: isMobile ? '200px':'270px',
+                height: isMobile ? '200px' : '270px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
@@ -97,12 +83,6 @@ export function WhyChooseUs() {
                   order={4}
                   style={{
                     fontSize: '25px',
-                    '@media (min-width: 768px)': {
-                      fontSize: '24px',
-                    },
-                    '@media (min-width: 1024px)': {
-                      fontSize: '30px',
-                    },
                   }}
                   c="#ff8a00"
                 >
@@ -112,14 +92,6 @@ export function WhyChooseUs() {
                   style={{
                     fontSize: '18px',
                     lineHeight: '18px',
-                    '@media (min-width: 768px)': {
-                      fontSize: '16px',
-                      lineHeight: '20px',
-                    },
-                    '@media (min-width: 1024px)': {
-                      fontSize: '18px',
-                      lineHeight: '22px',
-                    },
                   }}
                 >
                   {item.text}
