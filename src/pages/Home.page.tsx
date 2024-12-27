@@ -1,6 +1,6 @@
-import { Divider } from '@mantine/core';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Divider } from '@mantine/core';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { BusinessLines } from '@/components/BusinessLines/BusinessLines';
 import { CustomSolutions } from '@/components/CustomSolutions/CustomSolutions';
@@ -15,16 +15,16 @@ import { Header } from '../components/Header/Header';
 
 export function HomePage() {
   // Hooks para observar cada sección
-  const [refIntro, inViewIntro] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refAbout, inViewAbout] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refBusiness, inViewBusiness] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refSolutions, inViewSolutions] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refGallery, inViewGallery] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refSliderAsk, inViewSliderAsk] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refWhyChooseUs, inViewWhyChooseUs] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refWorkProcess, inViewWorkProcess] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refSliderLabs, inViewSliderLabs] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refGenLabSection, inViewGenLabSection] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [refIntro, inViewIntro] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refAbout, inViewAbout] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refBusiness, inViewBusiness] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refSolutions, inViewSolutions] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refGallery, inViewGallery] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refSliderAsk, inViewSliderAsk] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refWhyChooseUs, inViewWhyChooseUs] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refWorkProcess, inViewWorkProcess] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refSliderLabs, inViewSliderLabs] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refGenLabSection, inViewGenLabSection] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
     <div>
@@ -35,9 +35,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refIntro}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inViewIntro ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inViewIntro ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <Introduction />
         </motion.div>
@@ -47,9 +47,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refAbout}
-          initial={{ opacity: 0, x: -50 }}
-          animate={inViewAbout ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={inViewAbout ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <AboutUs />
         </motion.div>
@@ -59,9 +59,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refBusiness}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={inViewBusiness ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inViewBusiness ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.5 }}
         >
           <BusinessLines />
         </motion.div>
@@ -73,9 +73,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refSolutions}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inViewSolutions ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inViewSolutions ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <CustomSolutions />
         </motion.div>
@@ -85,9 +85,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refGallery}
-          initial={{ opacity: 0, x: -50 }}
-          animate={inViewGallery ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={inViewGallery ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <ImageGallery />
         </motion.div>
@@ -97,9 +97,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refSliderAsk}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={inViewSliderAsk ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inViewSliderAsk ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.5 }}
         >
           <SliderAsk />
         </motion.div>
@@ -109,9 +109,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refWhyChooseUs}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inViewWhyChooseUs ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inViewWhyChooseUs ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <WhyChooseUs />
         </motion.div>
@@ -123,9 +123,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refWorkProcess}
-          initial={{ opacity: 0, x: -50 }}
-          animate={inViewWorkProcess ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={inViewWorkProcess ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <WorkProcess />
         </motion.div>
@@ -137,9 +137,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refSliderLabs}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={inViewSliderLabs ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inViewSliderLabs ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.5 }}
         >
           <SliderLabs />
         </motion.div>
@@ -149,9 +149,9 @@ export function HomePage() {
       <AnimatePresence mode="wait">
         <motion.div
           ref={refGenLabSection}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inViewGenLabSection ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inViewGenLabSection ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.5 }}
         >
           <GenLabSection />
         </motion.div>

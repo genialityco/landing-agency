@@ -1,9 +1,14 @@
 import { IconCircleFilled } from '@tabler/icons-react';
 import { Container, Grid, Paper, Text, ThemeIcon, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 export function WhyChooseUs() {
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const { language } = useLanguage();
+  const { title, description, items } = translations[language].whyChooseUs;
+
   return (
     <Container size="lg" p="lg">
       <Title
@@ -13,9 +18,8 @@ export function WhyChooseUs() {
         }}
         ta="left"
         mb="md"
-      >
-        ¿Por Qué <span style={{ color: '#ff8a00' }}>Elegirnos</span>?
-      </Title>
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
 
       <Grid>
         <Grid.Col span={{ base: 12, sm: 6, md: 5, lg: 5 }}>
@@ -28,31 +32,13 @@ export function WhyChooseUs() {
             c="dimmed"
             mb="xl"
           >
-            Por un lado tenemos soluciones de tecnología listas que apalancan las ideas creativas y
-            eventos únicos como:
+            {description}
           </Text>
         </Grid.Col>
       </Grid>
 
       <Grid gutter="lg">
-        {[
-          {
-            title: 'Calidad y Experiencia:',
-            text: 'Expertos en tecnologías avanzadas y creación de experiencias interactivas.',
-          },
-          {
-            title: 'Equipo Profesional:',
-            text: 'Un equipo multidisciplinario de Ingenieros, desarrolladores, diseñadores, comunicadores y gestores de proyectos.',
-          },
-          {
-            title: 'Enfoque Global:',
-            text: 'Experiencia trabajando con agencias internacionales en mercados exigentes.',
-          },
-          {
-            title: 'Costos Competitivos:',
-            text: 'Tarifas atractivas gracias a costos operativos eficientes.',
-          },
-        ].map((item, index) => (
+        {items.map((item, index) => (
           <Grid.Col key={index} span={{ base: 12, sm: 6, md: 3 }}>
             <Paper
               withBorder

@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import { Image, Modal } from '@mantine/core';
+import { Image, Modal, Title } from '@mantine/core';
 
 export function ImageGallery() {
   const images = [
-    '/IMG/PROYECTO_01.jpg',
-    '/IMG/PROYECTO_02.jpg',
-    '/IMG/PROYECTO_03.jpg',
-    '/IMG/PROYECTO_04.jpg',
-    '/IMG/PROYECTO_05.jpg',
+    { src: '/IMG/PROYECTO_01.jpg', title: 'El Espectador' },
+    { src: '/IMG/PROYECTO_02.jpg', title: 'Pedro el escamoso' },
+    { src: '/IMG/PROYECTO_03.jpg', title: 'Navega entre eventos' },
+    { src: '/IMG/PROYECTO_04.jpg', title: 'Ail Air' },
+    { src: '/IMG/PROYECTO_05.jpg', title: 'Acho App' },
   ];
 
   const [opened, setOpened] = useState(false);
-  const [currentImage, setCurrentImage] = useState('');
+  const [currentImage, setCurrentImage] = useState<{ src: string; title: string } | null>(null);
 
-  const handleImageClick = (src: string) => {
-    setCurrentImage(src);
+  const handleImageClick = (image: { src: string; title: string }) => {
+    setCurrentImage(image);
     setOpened(true);
   };
 
   return (
     <>
-      {/* Modal para mostrar la imagen ampliada */}
       <Modal
         opened={opened}
         onClose={() => setOpened(false)}
@@ -34,39 +33,57 @@ export function ImageGallery() {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'center',
+            flexDirection: 'column',
             alignItems: 'center',
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            height: '40vh',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            height: '50vh',
             backgroundColor: 'black',
+            padding: '20px',
           }}
         >
-          <img
-            src={currentImage}
-            alt="Imagen ampliada"
-            style={{
-              height: '100%',
-              width: 'auto',
-            }}
-          />
+          {currentImage && (
+            <>
+              <Title
+                order={1}
+                style={{
+                  color: 'white',
+                  marginBottom: '20px',
+                }}
+                ta="center"
+              >
+                {currentImage.title}
+              </Title>
+              <img
+                src={currentImage.src}
+                alt={currentImage.title}
+                style={{
+                  maxHeight: '80%',
+                  maxWidth: '100%',
+                  objectFit: 'contain',
+                }}
+              />
+            </>
+          )}
         </div>
       </Modal>
 
-      {/* Galería de imágenes */}
+      {/* Galería de imágenes vertical con títulos */}
       <div
         style={{
-          display: 'grid',
-
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '30px',
+          padding: '20px',
         }}
       >
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div
             key={index}
-            onClick={() => handleImageClick(src)}
+            onClick={() => handleImageClick(image)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                handleImageClick(src);
+                handleImageClick(image);
               }
             }}
             role="button"
@@ -74,11 +91,15 @@ export function ImageGallery() {
             style={{
               cursor: 'pointer',
               outline: 'none',
+              textAlign: 'center',
             }}
           >
+            <Title order={1} ta="left" mb="md">
+              {image.title}
+            </Title>
             <Image
-              src={src}
-              alt={`Proyecto ${index + 1}`}
+              src={image.src}
+              alt={image.title}
               width="100%"
               fit="contain"
               style={{

@@ -1,6 +1,16 @@
 import { Button, Container, Flex, Text } from '@mantine/core';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 export function GenLabSection() {
+  const { language } = useLanguage();
+  const { text, button } = translations[language].genLabSection;
+
+  const logoSrc =
+  language === 'en'
+    ? '/IMG/LOGOS_GEN.iality_web-08-en.svg'
+    : '/SVG/LOGOS_GEN.iality_web-08.svg';
+
   const handleButtonClick = () => {
     window.open('https://interactive-cam.netlify.app/', '_blank', 'noopener,noreferrer');
   };
@@ -14,10 +24,11 @@ export function GenLabSection() {
         gap="lg"
       >
         <div style={{ flex: 1, textAlign: 'left', maxWidth: '600px' }}>
-          <Text style={{ fontSize: '40px', lineHeight: '50px' }} c="gray">
-            No tienes que <strong>esperar para tener tu experiencia,</strong> <br />
-            tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>
-          </Text>
+          <Text
+            style={{ fontSize: '40px', lineHeight: '50px' }}
+            c="gray"
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
           <Button
             fullWidth
             size="md"
@@ -26,11 +37,11 @@ export function GenLabSection() {
             mt="lg"
             onClick={handleButtonClick}
           >
-            Clic aquí para ir a la Cámara interactiva
+            {button}
           </Button>
         </div>
         <img
-          src="/SVG/LOGOS_GEN.iality_web-08.svg"
+          src={logoSrc}
           alt="GEN.LAB logo"
           width={200}
           height="auto"
