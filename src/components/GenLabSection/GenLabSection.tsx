@@ -7,7 +7,7 @@ import { useMediaQuery } from '@mantine/hooks';
 export function GenLabSection() {
   const { language } = useLanguage();
   const { text, button } = translations[language].genLabSection;
-    const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const logoSrc =
     language === 'en' ? '/IMG/LOGOS_GEN.iality_web-08-en.svg' : '/SVG/LOGOS_GEN.iality_web-08.svg';
@@ -35,13 +35,13 @@ export function GenLabSection() {
   };
 
   // Custom rendering for <strong> tags with progressive animation
-  const renderAnimatedText = (htmlString) => {
-    const parts = htmlString.split(/(<strong>.*?<\/strong>)/g);
+  const renderAnimatedText = (htmlString: string) => {
+    const parts: string[] = htmlString.split(/(<strong>.*?<\/strong>)/g);
 
-    return parts.map((part, index) => {
+    return parts.map((part: string, index: number) => {
       if (part.startsWith('<strong>')) {
         // Extract content inside <strong> and split into letters
-        const letters = part.replace(/<\/?strong>/g, '').split('');
+        const letters: string[] = part.replace(/<\/?strong>/g, '').split('');
         return (
           <motion.span
             key={index}
@@ -51,7 +51,7 @@ export function GenLabSection() {
             viewport={{ once: false, amount: 0.5 }}
             style={{ display: 'inline-flex', flexWrap: 'wrap' }}
           >
-            {letters.map((char, i) => (
+            {letters.map((char: string, i: number) => (
               <motion.strong
                 key={i}
                 style={{
@@ -86,7 +86,7 @@ export function GenLabSection() {
           </Text>
           <Button
             fullWidth
-            size={isMobile ? "xs" : "md"}
+            size={isMobile ? 'xs' : 'md'}
             radius="md"
             color="orange"
             mt="lg"
