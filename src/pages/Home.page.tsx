@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Divider } from '@mantine/core';
+import { Container, Divider } from '@mantine/core';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { BusinessLines } from '@/components/BusinessLines/BusinessLines';
 import { CustomSolutions } from '@/components/CustomSolutions/CustomSolutions';
@@ -27,9 +27,9 @@ export function HomePage() {
   const [refGenLabSection, inViewGenLabSection] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
-    <div>
+    <Container size="xxl">
       <Header />
-      <Divider m="md" size="md" style={{ border: '1px solid black' }} />
+      <Divider m="xl" size="md" style={{ border: '1px solid black' }} />
 
       {/* Sección de Introducción */}
       <AnimatePresence mode="wait">
@@ -49,11 +49,13 @@ export function HomePage() {
           ref={refAbout}
           initial={{ opacity: 0, x: -10 }}
           animate={inViewAbout ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
         >
           <AboutUs />
         </motion.div>
       </AnimatePresence>
+
+      <Divider m="xl" />
 
       {/* Sección Business Lines */}
       <AnimatePresence mode="wait">
@@ -67,7 +69,7 @@ export function HomePage() {
         </motion.div>
       </AnimatePresence>
 
-      <Divider m="md" size="md" style={{ border: '1px solid black' }} />
+      <Divider m="xl" size="md" style={{ border: '1px solid black' }} />
 
       {/* Sección Custom Solutions */}
       <AnimatePresence mode="wait">
@@ -117,7 +119,7 @@ export function HomePage() {
         </motion.div>
       </AnimatePresence>
 
-      <Divider m="md" size="md" style={{ border: '1px solid black' }} />
+      <Divider m="xl" size="md" style={{ border: '1px solid black' }} />
 
       {/* Work Process */}
       <AnimatePresence mode="wait">
@@ -131,7 +133,7 @@ export function HomePage() {
         </motion.div>
       </AnimatePresence>
 
-      <Divider m="md" size="md" style={{ border: '1px solid black' }} />
+      <Divider m="xl" size="md" style={{ border: '1px solid black' }} />
 
       {/* Slider Labs */}
       <AnimatePresence mode="wait">
@@ -156,6 +158,6 @@ export function HomePage() {
           <GenLabSection />
         </motion.div>
       </AnimatePresence>
-    </div>
+    </Container>
   );
 }

@@ -3,11 +3,11 @@ import { Image, Modal, Title } from '@mantine/core';
 
 export function ImageGallery() {
   const images = [
-    { src: '/IMG/PROYECTO_01.jpg', title: 'El Espectador' },
-    { src: '/IMG/PROYECTO_02.jpg', title: 'Pedro el escamoso' },
-    { src: '/IMG/PROYECTO_03.jpg', title: 'Navega entre eventos' },
-    { src: '/IMG/PROYECTO_04.jpg', title: 'Ail Air' },
-    { src: '/IMG/PROYECTO_05.jpg', title: 'Acho App' },
+    { src: '/IMG/PROYECTO_01.jpg', title: 'Mixed Reality Campaing' },
+    { src: '/IMG/PROYECTO_02.jpg', title: 'Augmented Reality Filters' },
+    { src: '/IMG/PROYECTO_03.jpg', title: 'Virtual Events' },
+    { src: '/IMG/PROYECTO_04.jpg', title: 'Ail News Portal' },
+    { src: '/IMG/PROYECTO_05.jpg', title: 'Mobile Event App (Android - iOS)' },
   ];
 
   const [opened, setOpened] = useState(false);
@@ -74,7 +74,6 @@ export function ImageGallery() {
           display: 'flex',
           flexDirection: 'column',
           gap: '30px',
-          padding: '20px',
         }}
       >
         {images.map((image, index) => (

@@ -2,7 +2,7 @@ export const translations = {
   en: {
     introduction: {
       text: `
-       <strong>GENIALITY</strong>, we turn ideas into unforgettable interactive experiences.
+       <b>GENIALITY</b>, we turn ideas into unforgettable interactive experiences.
         Our unique blend of talent and technology makes us the ideal partner for agencies, companies, and event organizations seeking
         <strong>impactful solutions.</strong>
       `,
@@ -103,14 +103,14 @@ export const translations = {
       note: "Our team communicates fluently in English, Spanish, and Japanese, to ensure seamless collaboration.",
     },
     genLabSection: {
-      text: "You don't have to <strong>wait to have your experience,</strong> <br /> we have simple examples that <strong>you can enjoy right now.</strong>",
-      button: "Click here to go to the Interactive Camera",
+      text: "You don't have to <strong>wait to have your experience,</strong> we have simple examples that <strong>you can enjoy right now.</strong>",
+      button: "Try an interactive game using your camera and hands",
     },
   },
   es: {
     introduction: {
       text: `
-        <strong>En GENIALITY</strong>, transformamos ideas en experiencias interactivas inolvidables.
+        <b>En GENIALITY</b>, transformamos ideas en experiencias interactivas inolvidables.
         Nuestra combinación única de talento y tecnología nos convierte en el socio ideal para agencias, empresas y organizaciones de eventos que buscan
         <strong>soluciones impactantes</strong>.
       `,
@@ -218,7 +218,7 @@ export const translations = {
       note: "Nuestro equipo tiene experiencia y fluidez con equipos que se comuniquen en: Inglés, Español, Japonés. Con certificaciones de idiomas en nivel C2.",
     },
     genLabSection: {
-      text: "No tienes que <strong>esperar para tener tu experiencia,</strong> <br /> tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>",
+      text: "No tienes que <strong>esperar para tener tu experiencia,</strong> <br/> tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>",
       button: "Clic aquí para ir a la Cámara interactiva",
     },
   },

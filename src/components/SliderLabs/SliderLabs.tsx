@@ -1,3 +1,4 @@
+import { Container } from "@mantine/core";
 
 export function SliderLabs() {
   const sliderImage = {
@@ -7,8 +8,8 @@ export function SliderLabs() {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
+    <Container size="xl">
       <img src="/IMG/LABS.png" alt="labs" style={sliderImage} />
-    </div>
+    </Container>
   );
 }

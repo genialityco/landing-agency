@@ -14,7 +14,7 @@ export function Header() {
   }
 
   return (
-    <Container fluid>
+    <Container size="xl">
       {/* Barra superior con logotipos */}
       <Flex
         direction="row"

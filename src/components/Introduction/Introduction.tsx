@@ -1,8 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Container, Grid, Text } from '@mantine/core';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
-import { motion } from 'framer-motion';
 
 export function Introduction() {
   const { language } = useLanguage();
@@ -24,14 +24,13 @@ export function Introduction() {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 1, ease: 'easeOut' },
     },
     neon: {
-      color: '#ff8a00', // Color neón
-      textShadow: '0 0 5px #ff8a00, 0 0 10px #ff8a00, 0 0 20px #ff8a00',
+      color: 'black',
+      textShadow: '0 0 2px #A9A9A9, 0 0 6px #A9A9A9',
       transition: {
-        delay: 1, // Espera un poco antes de aplicar el efecto
-        duration: 0.8,
+        duration: 1,
         ease: 'easeInOut',
       },
     },
@@ -65,7 +64,7 @@ export function Introduction() {
         <motion.strong
           key={`strong-${offset}`}
           initial="hidden"
-          whileInView={["visible", "neon"]} // Aplica ambas animaciones
+          whileInView={['visible', 'neon']}
           viewport={{ once: false, amount: 0.5 }}
           variants={strongVariants}
         >
@@ -97,8 +96,8 @@ export function Introduction() {
   };
 
   return (
-    <Container fluid>
-      <Grid ml="xl" my="xl">
+    <Container size="xl">
+      <Grid my="xl">
         <Grid.Col span={{ base: 12, sm: 12, md: 7, lg: 7 }}>
           <Text style={{ fontSize: '21px', lineHeight: '22px' }}>
             {parseTextWithAnimations(text)}
