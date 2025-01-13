@@ -91,20 +91,42 @@ export const translations = {
     },
     workProcess: {
       title: "<span style='color: #ff8a00;'>Our Workflow</span>",
-      subtitle: "We collaborate at any stage of your project:",
+      subtitle: 'We collaborate at any stage of your project:',
       steps: [
-        { title: "Brief:", description: "Definition and concept creation." },
-        { title: "Creative Proposal:", description: "Innovative ideas and concepts." },
-        { title: "Project Management:", description: "Detailed organization and tracking." },
-        { title: "Development and Pre-Production:", description: "High-standard technical execution." },
-        { title: "Production", description: "" },
-        { title: "Data and Analytics", description: "" },
+        { title: 'Brief:', description: 'Definition and concept creation.' },
+        { title: 'Creative Proposal:', description: 'Innovative ideas and concepts.' },
+        { title: 'Project Management:', description: 'Detailed organization and tracking.' },
+        {
+          title: 'Development and Pre-Production:',
+          description: 'High-standard technical execution.',
+        },
+        { title: 'Production', description: '' },
+        { title: 'Data and Analytics', description: '' },
       ],
-      note: "Our team communicates fluently in English, Spanish, and Japanese, to ensure seamless collaboration.",
+      note: 'Our team communicates fluently in English, Spanish, and Japanese, to ensure seamless collaboration.',
+    },
+    videoCards: {
+      items: [
+        {
+          title: 'Interactive Group Experience: Human Chain',
+          image: '/IMG/CargaHumana.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525827',
+        },
+        {
+          title: 'Interactive Group Experience: Challenging Cancer',
+          image: '/IMG/DesafiandoCancer.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525853',
+        },
+        {
+          title: 'Stand: Interactive Elevator Innovance',
+          image: '/IMG/AscensorInteractivo.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525792',
+        },
+      ],
     },
     genLabSection: {
       text: "You don't have to <strong>wait to have your experience,</strong> we have simple examples that <strong>you can enjoy right now.</strong>",
-      button: "Try an interactive game using your camera and hands",
+      button: 'Try an interactive game using your camera and hands',
     },
   },
   es: {
@@ -206,20 +228,42 @@ export const translations = {
     },
     workProcess: {
       title: "<span style='color: #ff8a00;'>Nuestro Proceso de Trabajo</span>",
-      subtitle: "Participamos en cualquier etapa del proyecto:",
+      subtitle: 'Participamos en cualquier etapa del proyecto:',
       steps: [
-        { title: "BRIEF:", description: "Definición y conceptualización." },
-        { title: "PROPUESTA CREATIVA:", description: "Ideas y conceptos innovadores." },
-        { title: "GESTIÓN DE PROYECTOS:", description: "Organización y seguimiento detallado." },
-        { title: "DESARROLLO Y PRE-PRODUCCIÓN:", description: "Ejecución técnica con estándares de excelencia." },
-        { title: "PRODUCCIÓN", description: "" },
-        { title: "DATA AND ANALYTICS", description: "" },
+        { title: 'BRIEF:', description: 'Definición y conceptualización.' },
+        { title: 'PROPUESTA CREATIVA:', description: 'Ideas y conceptos innovadores.' },
+        { title: 'GESTIÓN DE PROYECTOS:', description: 'Organización y seguimiento detallado.' },
+        {
+          title: 'DESARROLLO Y PRE-PRODUCCIÓN:',
+          description: 'Ejecución técnica con estándares de excelencia.',
+        },
+        { title: 'PRODUCCIÓN', description: '' },
+        { title: 'DATA AND ANALYTICS', description: '' },
       ],
-      note: "Nuestro equipo tiene experiencia y fluidez con equipos que se comuniquen en: Inglés, Español, Japonés. Con certificaciones de idiomas en nivel C2.",
+      note: 'Nuestro equipo tiene experiencia y fluidez con equipos que se comuniquen en: Inglés, Español, Japonés. Con certificaciones de idiomas en nivel C2.',
+    },
+    videoCards: {
+      items: [
+        {
+          title: 'Experiencia Interactiva Grupal: Cadena Humana',
+          image: '/IMG/CargaHumana.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525827',
+        },
+        {
+          title: 'Experiencia Interactiva Grupal: Desafiando el Cáncer',
+          image: '/IMG/DesafiandoCancer.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525853',
+        },
+        {
+          title: 'Stand: Ascensor Interactivo Innovance',
+          image: '/IMG/AscensorInteractivo.png',
+          videoUrl: 'https://player.vimeo.com/video/1046525792',
+        },
+      ],
     },
     genLabSection: {
-      text: "No tienes que <strong>esperar para tener tu experiencia,</strong> <br/> tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>",
-      button: "Clic aquí para ir a la Cámara interactiva",
+      text: 'No tienes que <strong>esperar para tener tu experiencia,</strong> <br/> tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>',
+      button: 'Clic aquí para ir a la Cámara interactiva',
     },
   },
 };

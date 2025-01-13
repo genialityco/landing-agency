@@ -73,14 +73,14 @@ export function GenLabSection() {
   };
 
   return (
-    <Container size="xl" mt="xl">
+    <Container size="xl" my="xl">
       <Flex
         direction={{ base: 'column', md: 'row' }}
         align={{ base: 'center', md: 'center' }}
         justify="space-between"
         gap="lg"
       >
-        <div style={{ flex: 1, textAlign: 'left', maxWidth: '600px' }}>
+        <div style={{ flex: 1, textAlign: 'left', maxWidth: '650px' }}>
           <Text style={{ fontSize: '40px', lineHeight: '40px' }} c="gray">
             {renderAnimatedText(text)}
           </Text>

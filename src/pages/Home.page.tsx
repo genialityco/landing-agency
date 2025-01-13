@@ -9,6 +9,7 @@ import { ImageGallery } from '@/components/ImageGallery/ImageGallery';
 import { Introduction } from '@/components/Introduction/Introduction';
 import { SliderAsk } from '@/components/SliderAsk/SliderAsk';
 import { SliderLabs } from '@/components/SliderLabs/SliderLabs';
+import { VideoCards } from '@/components/VideoCards/VideoCards';
 import { WhyChooseUs } from '@/components/WhyChooseUs/WhyChooseUs';
 import { WorkProcess } from '@/components/WorkProcess/WorkProcess';
 import { Header } from '../components/Header/Header';
@@ -25,6 +26,7 @@ export function HomePage() {
   const [refWorkProcess, inViewWorkProcess] = useInView({ triggerOnce: false, threshold: 0.1 });
   const [refSliderLabs, inViewSliderLabs] = useInView({ triggerOnce: false, threshold: 0.1 });
   const [refGenLabSection, inViewGenLabSection] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refVideoCards, inViewVideoCards] = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
     <Container size="xxl">
@@ -92,6 +94,18 @@ export function HomePage() {
           transition={{ duration: 0.5 }}
         >
           <ImageGallery />
+        </motion.div>
+      </AnimatePresence>
+
+      {/*Video Cards Experiences */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          ref={refVideoCards}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inViewVideoCards ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.5 }}
+        >
+          <VideoCards />
         </motion.div>
       </AnimatePresence>
 
