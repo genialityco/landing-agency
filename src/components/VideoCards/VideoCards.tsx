@@ -44,7 +44,7 @@ export function VideoCards() {
                   style={{ width: '100%', height: '200px', objectFit: 'cover' }}
                 />
               </motion.div>
-              <Title order={4}>
+              <Title order={4} ta="center" px="xs">
                 {experience.title}
               </Title>
             </Paper>
