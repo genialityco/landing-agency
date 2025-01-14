@@ -1,9 +1,10 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useState } from 'react';
-import { Modal, Paper, Grid, Title, Container } from '@mantine/core';
+import { Paper, Grid, Title, Container, ActionIcon } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { translations } from '@/translations';
 import { useLanguage } from '@/context/LanguageContext';
+import { IconX } from '@tabler/icons-react';
 
 export function VideoCards() {
   const { language } = useLanguage();
@@ -30,6 +31,8 @@ export function VideoCards() {
                 textAlign: 'center',
                 height: '100%',
                 cursor: 'pointer',
+                position: 'relative',
+                overflow: 'hidden',
               }}
               onClick={() => handleCardClick(experience.videoUrl)}
             >
@@ -44,6 +47,31 @@ export function VideoCards() {
                   style={{ width: '100%', height: '200px', objectFit: 'cover' }}
                 />
               </motion.div>
+              {/* Botón de reproducción */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '40%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  background: 'rgba(0, 0, 0, 0.6)',
+                  borderRadius: '50%',
+                  padding: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                  width="40px"
+                  height="40px"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
               <Title order={4} ta="center" px="xs">
                 {experience.title}
               </Title>
@@ -53,22 +81,65 @@ export function VideoCards() {
       </Grid>
 
       {/* Modal para reproducir el video */}
-      <Modal
-        opened={opened}
-        onClose={() => setOpened(false)}
-        size="xs"
-        centered
-      >
-        <iframe
-          src={`${currentVideo}?autoplay=1`}
-          width="100%"
-          height="500px"
-          style={{ border: 'none' }}
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          title="Experience Video"
-        ></iframe>
-      </Modal>
+      {opened && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              width: '95%',
+              height: '80%',
+            }}
+          >
+            <iframe
+              src={`${currentVideo}?autoplay=1`}
+              width="100%"
+              height="100%"
+              style={{
+                border: 'none',
+                borderRadius: '12px',
+              }}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Experience Video"
+            ></iframe>
+
+            {/* Botón flotante */}
+            <ActionIcon
+              onClick={() => setOpened(false)}
+              style={{
+                position: 'absolute',
+                top: '-50px', 
+                left: '50%', 
+                transform: 'translateX(-50%)', 
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                zIndex: 1100,
+              }}
+            >
+              <IconX size={24} color="black" />
+            </ActionIcon>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }
