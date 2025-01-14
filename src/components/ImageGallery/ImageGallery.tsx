@@ -1,25 +1,84 @@
-import React, { useState } from 'react';
-import { Image, Modal, Title } from '@mantine/core';
+import { useState } from 'react';
+import { Container, Image, Modal, Title } from '@mantine/core';
+import ManualCarousel from '../ManualCarousel ';
 
 export function ImageGallery() {
-  const images = [
-    { src: '/IMG/PROYECTO_01.jpg', title: 'Mixed Reality Campaing' },
-    { src: '/IMG/PROYECTO_02.jpg', title: 'Augmented Reality Filters' },
-    { src: '/IMG/PROYECTO_03.jpg', title: 'Virtual Events' },
-    { src: '/IMG/PROYECTO_04.jpg', title: 'Ail News Portal' },
-    { src: '/IMG/PROYECTO_05.jpg', title: 'Mobile Event App (Android - iOS)' },
+  const projects = [
+    {
+      title: 'Mixed Reality Campaing',
+      mainImage: '/IMG/PROYECTO_01.jpg',
+      images: [
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_01.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_02.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_03.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_04.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_05.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_06.png',
+        '/IMG/EL-ESPECTADOR/CARRUSEL_EL-ESPACTADOR_07.png',
+      ],
+    },
+    {
+      title: 'Augmented Reality Filters',
+      mainImage: '/IMG/PROYECTO_02.jpg',
+      images: [
+        '/IMG/CARACOL/CARRUSEL_CARACOL_01.png',
+        '/IMG/CARACOL/CARRUSEL_CARACOL_02.png',
+        '/IMG/CARACOL/CARRUSEL_CARACOL_03.png',
+        '/IMG/CARACOL/CARRUSEL_CARACOL_04.png',
+        '/IMG/CARACOL/CARRUSEL_CARACOL_05.png',
+      ],
+    },
+    {
+      title: 'Virtual Events',
+      mainImage: '/IMG/PROYECTO_03.jpg',
+      images: [
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_01.png',
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_02.png',
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_03.png',
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_04.png',
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_05.png',
+        '/IMG/FUNDEPAZ/CARRUSEL_FUNDE-PAZ_06.png',
+      ],
+    },
+    {
+      title: 'Ail News Portal',
+      mainImage: '/IMG/PROYECTO_04.jpg',
+      images: [
+        '/IMG/AIL/CARRUSEL_AIL_01.png',
+        '/IMG/AIL/CARRUSEL_AIL_02.png',
+        '/IMG/AIL/CARRUSEL_AIL_03.png',
+        '/IMG/AIL/CARRUSEL_AIL_04.png',
+        '/IMG/AIL/CARRUSEL_AIL_05.png',
+        '/IMG/AIL/CARRUSEL_AIL_06.png',
+        '/IMG/AIL/CARRUSEL_AIL_07.png',
+      ],
+    },
+    {
+      title: 'Mobile Event App (Android - iOS)',
+      mainImage: '/IMG/PROYECTO_05.jpg',
+      images: [
+        '/IMG/ACHO/POST-APP-01_01.png',
+        '/IMG/ACHO/POST-APP-01_02.png',
+        '/IMG/ACHO/POST-APP-01_03.png',
+        '/IMG/ACHO/POST-APP-01_04.png',
+        '/IMG/ACHO/POST-APP-01_05.png',
+      ],
+    },
   ];
 
   const [opened, setOpened] = useState(false);
-  const [currentImage, setCurrentImage] = useState<{ src: string; title: string } | null>(null);
+  const [currentProject, setCurrentProject] = useState<{
+    title: string;
+    images: string[];
+  } | null>(null);
 
-  const handleImageClick = (image: { src: string; title: string }) => {
-    setCurrentImage(image);
+  const handleProjectClick = (project: { title: string; images: string[] }) => {
+    setCurrentProject(project);
     setOpened(true);
   };
 
   return (
-    <>
+    <Container fluid>
       <Modal
         opened={opened}
         onClose={() => setOpened(false)}
@@ -28,44 +87,34 @@ export function ImageGallery() {
         centered
         styles={{
           body: { padding: 0 },
-        }}
-      >
-        <div
-          style={{
+          content: {
+            backgroundColor: 'transparent',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             overflow: 'hidden',
-            height: '50vh',
-            backgroundColor: 'black',
-            padding: '20px',
-          }}
-        >
-          {currentImage && (
-            <>
-              <Title
-                order={1}
-                style={{
-                  color: 'white',
-                  marginBottom: '20px',
-                }}
-                ta="center"
-              >
-                {currentImage.title}
-              </Title>
-              <img
-                src={currentImage.src}
-                alt={currentImage.title}
-                style={{
-                  maxHeight: '80%',
-                  maxWidth: '100%',
-                  objectFit: 'contain',
-                }}
-              />
-            </>
-          )}
-        </div>
+            borderRadius: '12px',
+            padding: 0,
+          },
+        }}
+      >
+        {currentProject && (
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ManualCarousel images={currentProject.images} />
+          </div>
+        )}
       </Modal>
 
       {/* Galería de imágenes vertical con títulos */}
@@ -76,13 +125,21 @@ export function ImageGallery() {
           gap: '30px',
         }}
       >
-        {images.map((image, index) => (
+        {projects.map((project, index) => (
           <div
             key={index}
-            onClick={() => handleImageClick(image)}
+            onClick={() =>
+              handleProjectClick({
+                title: project.title,
+                images: project.images,
+              })
+            }
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                handleImageClick(image);
+                handleProjectClick({
+                  title: project.title,
+                  images: project.images,
+                });
               }
             }}
             role="button"
@@ -94,11 +151,11 @@ export function ImageGallery() {
             }}
           >
             <Title order={1} ta="left" mb="md">
-              {image.title}
+              {project.title}
             </Title>
             <Image
-              src={image.src}
-              alt={image.title}
+              src={project.mainImage}
+              alt={project.title}
               width="100%"
               fit="contain"
               style={{
@@ -108,6 +165,6 @@ export function ImageGallery() {
           </div>
         ))}
       </div>
-    </>
+    </Container>
   );
 }

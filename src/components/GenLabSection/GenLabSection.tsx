@@ -16,7 +16,6 @@ export function GenLabSection() {
     window.open('https://interactive-cam.netlify.app/', '_blank', 'noopener,noreferrer');
   };
 
-  // Variants for progressive animation
   const letterVariants = {
     initial: { scaleY: 1 },
     animate: {
@@ -25,7 +24,6 @@ export function GenLabSection() {
     },
   };
 
-  // Container animation to stagger letters
   const containerVariants = {
     animate: {
       transition: {
@@ -34,13 +32,11 @@ export function GenLabSection() {
     },
   };
 
-  // Custom rendering for <strong> tags with progressive animation
   const renderAnimatedText = (htmlString: string) => {
     const parts: string[] = htmlString.split(/(<strong>.*?<\/strong>)/g);
 
     return parts.map((part: string, index: number) => {
       if (part.startsWith('<strong>')) {
-        // Extract content inside <strong> and split into letters
         const letters: string[] = part.replace(/<\/?strong>/g, '').split('');
         return (
           <motion.span
@@ -67,7 +63,6 @@ export function GenLabSection() {
           </motion.span>
         );
       }
-      // Static rendering for non-<strong> parts
       return <span key={index} dangerouslySetInnerHTML={{ __html: part }} />;
     });
   };
@@ -81,7 +76,7 @@ export function GenLabSection() {
         gap="lg"
       >
         <div style={{ flex: 1, textAlign: 'left', maxWidth: '650px' }}>
-          <Text style={{ fontSize: '40px', lineHeight: '40px' }} c="gray">
+          <Text style={{ fontSize: '38px', lineHeight: '40px' }} c="gray">
             {renderAnimatedText(text)}
           </Text>
           <Button

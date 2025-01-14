@@ -24,7 +24,7 @@ export function SliderAsk() {
   return (
     <div style={{ position: 'relative', width: '100%', overflow: 'hidden', marginTop: "40px" }}>
       <iframe
-        src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=1&controls=0`}
+        src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&muted=1`}
         width={windowWidth}
         height={isMobile ? "300" : "600"}
         style={{

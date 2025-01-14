@@ -262,7 +262,7 @@ export const translations = {
       ],
     },
     genLabSection: {
-      text: 'No tienes que <strong>esperar para tener tu experiencia,</strong> <br/> tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>',
+      text: 'No tienes que <strong>esperar para tener tu experiencia,</strong>tenemos unos ejemplos sencillos que <strong>puedes disfrutar de una vez.</strong>',
       button: 'Clic aquí para ir a la Cámara interactiva',
     },
   },
