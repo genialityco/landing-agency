@@ -39,7 +39,7 @@ export function HomePage() {
           ref={refIntro}
           initial={{ opacity: 0, y: 10 }}
           animate={inViewIntro ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.75 }}
         >
           <Introduction />
         </motion.div>
@@ -51,7 +51,7 @@ export function HomePage() {
           ref={refAbout}
           initial={{ opacity: 0, x: -10 }}
           animate={inViewAbout ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.75 }}
         >
           <AboutUs />
         </motion.div>
@@ -60,12 +60,16 @@ export function HomePage() {
       <Divider m="xl" />
 
       {/* Sección Business Lines */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           ref={refBusiness}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inViewBusiness ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{
+            duration: 0.75,
+            delay: inViewBusiness ? 0 : 0.2,
+          }}
         >
           <BusinessLines />
         </motion.div>

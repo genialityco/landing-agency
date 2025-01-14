@@ -54,12 +54,10 @@ export function AboutUs() {
 
   return (
     <Container size="xl">
-      <AnimatePresence mode="wait">
         <motion.div
           initial="hidden"
           whileInView="visible"
           exit="exit"
-          viewport={{ once: false, amount: 0.5 }}
           variants={paperVariants}
         >
           <Paper withBorder radius="lg" shadow="md" p="xl" style={{ border: '4px solid #003b5b' }}>
@@ -133,7 +131,6 @@ export function AboutUs() {
             </Flex>
           </Paper>
         </motion.div>
-      </AnimatePresence>
     </Container>
   );
 }
