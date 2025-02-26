@@ -23,6 +23,26 @@ export const translations = {
         'Ready-to-Use Event Technology Solutions Empower your creative ideas and create unique events with:',
       items: [
         {
+          title1: 'Smart',
+          title2: 'Robots',
+          description: 'Facial recognition of conversations, feelings, movements.',
+        },
+        {
+          title1: 'Interactive',
+          title2: 'Stands',
+          description: 'Interactive, visual, experiential, sensory, reactive, electric actuators, pneumatic.',
+        },
+        {
+          title1: 'Mapping,',
+          title2: 'Interactive Displays',
+          description: 'Sensors, motion, actuators, holograms, totems, displays.',
+        },
+        {
+          title1: 'Net',
+          title2: 'Working AI',
+          description: 'It evolves the way to connect with people at events.',
+        },
+        {
           title1: 'On-Site Interactive',
           title2: 'Experiences',
           description: '(sensors, actuators, motion detection).',
@@ -30,7 +50,32 @@ export const translations = {
         {
           title1: 'AI-Driven Interaction',
           title2: 'Experiences',
-          description: '',
+          description: 'Experiences based on artificial intelligence, generative, conversational, extended.',
+        },
+        {
+          title1: 'Interactive',
+          title2: 'Dynamics',
+          description: 'Virtual, dynamize virtual spaces, such as squid tournaments, transmissions.',
+        },
+        {
+          title1: '',
+          title2: 'Gamification',
+          description: 'Mini-games, Dynamics, Challenges, Contests, Ranking, Presential / Virtual, mobile phones.',
+        },
+        {
+          title1: 'Immersive',
+          title2: 'Experiences',
+          description: 'Augmented Reality, Virtual Reality, Mixed Reality.',
+        },
+        {
+          title1: 'Digital',
+          title2: 'Developments',
+          description: 'Portals, Landings, Apps, Games, Experiences.',
+        },
+        {
+          title1: 'Virtual',
+          title2: 'Events',
+          description: 'Gen.Live Webinars with interactivity and AI.',
         },
         {
           title1: 'Conference Registration',
@@ -160,6 +205,26 @@ export const translations = {
         'Por un lado tenemos soluciones de tecnología listas que apalancan las ideas creativas y eventos únicos como:',
       items: [
         {
+          title1: 'Robots',
+          title2: 'Inteligentes',
+          description: 'Reconocimiento facial conversaciones, sentimientos, movimientos.',
+        },
+        {
+          title1: 'Stands',
+          title2: 'Interactivos',
+          description: 'Interactivos, visuales, experienciales, sensóricos, reactivos, actuadores eléctricos, neumáticos.',
+        },
+        {
+          title1: 'Mapping,',
+          title2: 'Pantallas interactivas',
+          description: 'Sensores, movimiento, actuadores, Hologramas, Totéms, Pantallas.',
+        },
+        {
+          title1: 'Net',
+          title2: 'Working AI',
+          description: 'Evoluciona la forma de conectar con personas en eventos.',
+        },
+        {
           title1: 'Experiencias Interactivas',
           title2: 'Presenciales',
           description: '(con sensores, actuadores, detección de movimientos con cámara).',
@@ -167,7 +232,32 @@ export const translations = {
         {
           title1: 'Experiencias de interacción',
           title2: 'con IA',
-          description: '',
+          description: 'Experiencias basadas en inteligencia artificial, generativa, conversacional, extendida.',
+        },
+        {
+          title1: 'Dinamicas',
+          title2: 'Interactivas',
+          description: 'Virtuales, dinamizar los espacios virtuales, como los torneos del calamar, transmisiones.',
+        },
+        {
+          title1: '',
+          title2: 'Gamificación',
+          description: 'Mini-juegos, Dinámicas, Retos, Concursos, Ranking, Presencial / Virtual, moviles.',
+        },
+        {
+          title1: 'Experiencias',
+          title2: 'Inmersivas',
+          description: 'Realidad aumentada, Realidad virtual, Realidad Mixta.',
+        },
+        {
+          title1: 'Desarrollos',
+          title2: 'Digitales',
+          description: 'Portales, Landings, Apps, Juegos, Experiencias.',
+        },
+        {
+          title1: 'Eventos',
+          title2: 'Virtuales',
+          description: 'Gen.Live Webinars con interactividad e AI.',
         },
         {
           title1: 'Plataforma para comprar',

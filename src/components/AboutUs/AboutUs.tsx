@@ -1,5 +1,5 @@
 import { IconStarFilled } from '@tabler/icons-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Container, Flex, Grid, Paper, Text, ThemeIcon, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { useLanguage } from '@/context/LanguageContext';
